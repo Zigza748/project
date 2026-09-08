@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KA-BARKADA connects people, resources, and practical support for stronger communities.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+    <title>KA-BARKADA | Communities in action</title>
+    <link rel="icon" type="image/png" href="logo-favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="#top" class="logo"><span class="logo-mark">+</span><span>KA-BARKADA</span></a>
+        <nav aria-label="Main navigation"><ul class="nav-links"><li><a class="active" href="#top">Home</a></li><li><a href="#about">About us</a></li><li><a href="#work">Our work</a></li><li><a href="#stories">Stories</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+        <a href="#support" class="donate-btn">Support the work <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="top">
+        <section class="hero"><div class="hero-copy"><p class="eyebrow">People helping people</p><h1>Small acts.<br><em>Lasting change.</em></h1><p class="hero-text">We bring caring people together with the communities and causes that need them most.</p><div class="hero-actions"><a href="#support" class="button button-primary">Make a difference <span aria-hidden="true">↗</span></a><a href="#about" class="text-link">Learn about KA-BARKADA <span aria-hidden="true">→</span></a></div></div><div class="hero-note"><span class="note-dot"></span><strong>Since 2013</strong><span>building hope together</span></div></section>
+        <section class="intro" id="about"><p class="eyebrow">What we believe</p><div class="intro-layout"><h2>Good things happen<br>when we show up.</h2><p>KA-BARKADA is a community-powered organization creating practical paths to opportunity, dignity, and recovery. Every project starts with listening and ends with people feeling a little less alone.</p></div><div class="impact-row"><div><strong>24<span>k</span></strong><small>lives reached</small></div><div><strong>86</strong><small>community projects</small></div><div><strong>12</strong><small>years of service</small></div><a href="#work" class="circle-link" aria-label="See our work">→</a></div></section>
+        <section class="work-section" id="work"><div class="section-heading"><div><p class="eyebrow">Where it matters</p><h2>Our work in motion</h2></div><a href="#stories" class="text-link">See all projects <span aria-hidden="true">→</span></a></div><div class="project-grid"><article class="project-card project-large"><div class="project-image image-community"><span class="project-tag">Community care</span></div><div class="project-body"><h3>Rebuilding stronger, together</h3><p>Local support for families finding their footing after crisis.</p><a href="#stories" class="arrow-link" aria-label="Read about community care">↗</a></div></article><article class="project-card"><div class="project-image image-learn"><span class="project-tag">Learning</span></div><div class="project-body"><h3>Room to grow</h3><p>Tools and spaces for young people to thrive.</p><a href="#stories" class="arrow-link" aria-label="Read about learning">↗</a></div></article><article class="project-card"><div class="project-image image-relief"><span class="project-tag">Rapid relief</span></div><div class="project-body"><h3>Help, right when it counts</h3><p>Turning generosity into timely, thoughtful action.</p><a href="#stories" class="arrow-link" aria-label="Read about rapid relief">↗</a></div></article></div></section>
+        <section class="support-section" id="support"><div><p class="eyebrow">Your next step</p><h2>There is room<br>for you here.</h2></div><div><p>Whether you give time, resources, or a listening ear, your support helps a community move forward.</p><button class="button button-light" id="join-button" type="button">Join the movement <span aria-hidden="true">↗</span></button></div></section>
+        <section class="stories-section" id="stories"><div class="section-heading"><div><p class="eyebrow">Stay connected</p><h2>From the community</h2></div><a class="button button-primary" href="https://www.instagram.com/artemadridevents?stkn=ZXM1MXExZ" target="_blank" rel="noopener noreferrer">Follow on Instagram <span aria-hidden="true">↗</span></a></div><div class="story-grid"><blockquote>“The best part was realizing we did not have to figure everything out alone.”<cite>— Mariel, community partner</cite></blockquote><div class="story-image"></div></div></section>
+    </main>
+    <dialog class="join-dialog" id="join-dialog" aria-labelledby="join-title">
+        <button class="dialog-close" id="dialog-close" type="button" aria-label="Close sign-up form">&times;</button>
+        <p class="eyebrow">Come as you are</p>
+        <h2 id="join-title">Join the<br><em>KA-BARKADA.</em></h2>
+        <p class="dialog-copy">Tell us how you would like to help. We will be in touch with the next step.</p>
+        <form id="join-form">
+            <label for="join-name">Your name</label>
+            <input id="join-name" name="name" type="text" placeholder="Maria Santos" maxlength="80" autocomplete="name" required>
+            <label for="join-email">Email address</label>
+            <input id="join-email" name="email" type="email" placeholder="maria@example.com" maxlength="254" autocomplete="email" required>
+            <label for="join-interest">I would like to</label>
+            <select id="join-interest" name="interest"><option>Volunteer my time</option><option>Support a project</option><option>Partner with KA-BARKADA</option><option>Learn more</option></select>
+            <button class="button button-primary dialog-submit" type="submit">Send my details <span aria-hidden="true">↗</span></button>
+        </form>
+        <p class="form-success" id="form-success" hidden>Thank you for joining us. We will be in touch soon.</p>
+    </dialog>
+    <footer id="contact"><div class="footer-top"><a href="#top" class="logo"><span class="logo-mark">+</span><span>KA-BARKADA</span></a><p>Making room for better days.</p><a href="mailto:hello@kabayan.org" class="footer-email">hello@kabayan.org ↗</a></div><div class="footer-bottom"><span>© 2026 KA-BARKADA</span><div><a href="#about">About</a><a href="#support">Get involved</a><a href="#contact">Contact</a></div><span>Built with care</span></div></footer>
+    <script src="script.js" defer></script>
+</body>
+</html>

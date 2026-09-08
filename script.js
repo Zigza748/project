@@ -4,6 +4,9 @@ const dialogClose = document.querySelector('#dialog-close');
 const joinForm = document.querySelector('#join-form');
 const formSuccess = document.querySelector('#form-success');
 let lastJoinAttempt = 0;
+const posterDialog = document.querySelector('#poster-dialog');
+const posterTrigger = document.querySelector('#poster-trigger');
+const posterClose = document.querySelector('#poster-close');
 const registerDialog = document.querySelector('#register-dialog');
 const loginDialog = document.querySelector('#login-dialog');
 const registerClose = document.querySelector('#register-close');
@@ -14,6 +17,14 @@ const registerForm = document.querySelector('#register-form');
 const loginForm = document.querySelector('#login-form');
 const registerStatus = document.querySelector('#register-status');
 const loginStatus = document.querySelector('#login-status');
+
+if (posterDialog && posterTrigger && posterClose) {
+    posterTrigger.addEventListener('click', () => posterDialog.showModal());
+    posterClose.addEventListener('click', () => posterDialog.close());
+    posterDialog.addEventListener('click', (event) => {
+        if (event.target === posterDialog) posterDialog.close();
+    });
+}
 
 async function submitAuthForm(event, endpoint, statusElement) {
     event.preventDefault();

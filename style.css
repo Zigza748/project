@@ -83,8 +83,11 @@ h2 { font-size:clamp(34px,4vw,57px); letter-spacing:-.05em; }
 .project-body p { color:var(--muted); font-size:13px; max-width:220px; }
 .arrow-link { align-items:center; border:1px solid var(--line); border-radius:50%; bottom:22px; display:flex; height:36px; justify-content:center; position:absolute; right:20px; width:36px; }
 .support-section { align-items:center; background:var(--orange); color:white; display:grid; gap:10vw; grid-template-columns:1fr 1fr; padding:92px 10vw; }
-.support-section .eyebrow { color:var(--yellow); }
+.support-section .eyebrow { color:var(--orange); }
 .support-section>div:last-child p { color:rgba(255,255,255,.82); margin-bottom:27px; }
+.social-panel { background:var(--orange); color:white; padding:30px; }
+.support-section .social-panel p { color:white; margin-bottom:27px; }
+.social-panel .button-light { background:var(--yellow); color:var(--ink); }
 .button-light { background:white; color:var(--ink); }
 .stories-section { background:var(--paper); }
 .story-grid { align-items:stretch; display:grid; grid-template-columns:1fr 1fr; min-height:310px; }

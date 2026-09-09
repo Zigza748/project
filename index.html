@@ -18,8 +18,23 @@
 <body>
     <header class="navbar">
         <a href="#top" class="logo"><span class="logo-mark">+</span><span>KA-BARKADA</span></a>
-        <nav aria-label="Main navigation"><ul class="nav-links"><li><a class="active" href="#top">Home</a></li><li><a href="#about">About us</a></li><li><a href="#work">Our work</a></li><li><a href="#events">Events</a></li><li><a href="#contact">Contact</a></li></ul></nav>
-        <div class="account-actions"><button class="account-link" id="login-button" type="button">Log in</button><a class="donate-btn account-register" href="#donate">Donate <span aria-hidden="true">↗</span></a></div>
+        <nav aria-label="Main navigation"><ul class="nav-links"><li><a class="active" href="#top">Home</a></li><li><a href="#about">About us</a></li><li><a href="#work">Our work</a></li><li><a href="#events">Events</a></li><li><a href="#contact">Contact</a></li><li class="admin-nav-item" id="admin-nav-item" hidden><a href="#admin">Admin</a></li></ul></nav>
+        <div class="account-actions">
+            <div class="account-user" id="account-user" hidden>
+                <button class="user-badge" id="user-badge" type="button" aria-expanded="false" aria-controls="user-menu">
+                    <span>Hi, Guest</span>
+                </button>
+                <div class="user-menu" id="user-menu" hidden>
+                    <div class="menu-label">Logged in as</div>
+                    <div class="menu-user-name" id="menu-user-name">Guest</div>
+                    <div class="menu-user-email" id="menu-user-email">guest@example.com</div>
+                    <button class="menu-action" id="profile-button" type="button">Profile</button>
+                    <button class="menu-action danger" id="logout-button" type="button">Log out</button>
+                </div>
+            </div>
+            <button class="account-link" id="login-button" type="button">Log in</button>
+            <a class="donate-btn account-register" href="#donate">Donate <span aria-hidden="true">↗</span></a>
+        </div>
     </header>
 
     <main id="top">
@@ -39,6 +54,44 @@
         <section class="intro newsletter-section"><p class="eyebrow">Newsletter</p><div class="intro-layout"><h2>Stay in the loop.</h2><p>There's always something happening. Receive updates about cultural events, volunteer opportunities, scholarships, community projects, partnerships, and ways you can get involved.</p></div><form class="newsletter-form"><label for="newsletter-email">Enter your email address</label><input id="newsletter-email" name="email" type="email" placeholder="you@example.com" required><button class="button button-primary" type="submit">Join our community <span aria-hidden="true">→</span></button></form></section>
         <section class="intro contact-section" id="contact"><p class="eyebrow">Let's connect</p><div class="intro-layout"><div><h2>Good things happen when people come together.</h2><p class="section-note">Want to collaborate? Have an idea for a cultural program? Interested in volunteering? Want to sponsor an event? We would love to hear from you.</p><p class="contact-details"><a href="mailto:kabarkadautah@gmail.com">kabarkadautah@gmail.com</a><br><a href="tel:+18019602994">+1 801 - 960 - 2994</a></p></div><form class="contact-form"><label for="contact-name">Name</label><input id="contact-name" name="name" type="text" required><label for="contact-email">Email</label><input id="contact-email" name="email" type="email" required><label for="contact-organization">Organization</label><input id="contact-organization" name="organization" type="text"><label for="contact-interest">How would you like to connect?</label><input id="contact-interest" name="interest" type="text"><label for="contact-message">Message</label><textarea id="contact-message" name="message" rows="5" required></textarea><button class="button button-primary" type="submit">Send message <span aria-hidden="true">→</span></button></form></div></section>
         <section class="support-section"><div><p class="eyebrow">Your next step</p><h2>What will<br>your role be?</h2></div><div><p>You can attend an event. Volunteer. Share your culture. Become a partner. Support a student. Help a community in need. Simply show up and learn something new.<br><br>Whatever your role may be, there is a place for you here.<br><br>Many cultures. One community. Countless possibilities.</p><a class="button button-light" href="#support">Get involved <span aria-hidden="true">→</span></a></div></section>
+        <section class="intro admin-section" id="admin" hidden>
+            <p class="eyebrow">Admin access</p>
+            <div class="intro-layout">
+                <div>
+                    <h2>Community dashboard.</h2>
+                    <p class="section-note">This section is only visible to the built-in admin account.</p>
+                </div>
+                <div class="admin-panel">
+                    <div class="admin-stat">
+                        <span>Accounts</span>
+                        <strong id="admin-account-count">0</strong>
+                    </div>
+                    <div class="admin-stat">
+                        <span>Role</span>
+                        <strong>Administrator</strong>
+                    </div>
+                    <div class="admin-stat admin-stat-wide">
+                        <span>Access status</span>
+                        <strong id="admin-status-text">Active</strong>
+                    </div>
+                    <div class="admin-stat admin-stat-wide">
+                        <span>Active users</span>
+                        <div class="admin-table-wrap">
+                            <table class="admin-user-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-user-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <dialog class="poster-dialog" id="poster-dialog" aria-label="Ka-Barkada mission poster viewer">
         <button class="dialog-close" id="poster-close" type="button" aria-label="Close poster viewer">&times;</button>
@@ -73,10 +126,18 @@
         <button class="dialog-close" id="login-close" type="button" aria-label="Close login dialog">&times;</button>
         <p class="eyebrow">Welcome back</p>
         <h2 id="login-title">Log in to the<br><em>community.</em></h2>
-        <form class="auth-form" id="login-form"><label for="login-email">Email address</label><input id="login-email" name="email" type="email" autocomplete="email" maxlength="254" required><label for="login-password">Password</label><input id="login-password" name="password" type="password" autocomplete="current-password" minlength="12" maxlength="128" required><button class="button button-primary" type="submit">Log in <span aria-hidden="true">→</span></button></form>
+        <form class="auth-form" id="login-form"><label for="login-email">Email address</label><input id="login-email" name="email" type="email" autocomplete="email" maxlength="254" required><label for="login-password">Password</label><input id="login-password" name="password" type="password" autocomplete="current-password" maxlength="128" required><button class="button button-primary" type="submit">Log in <span aria-hidden="true">→</span></button></form>
         <p class="auth-status" id="login-status" aria-live="polite"></p>
     </dialog>
     <footer><div class="footer-top"><a href="#top" class="logo"><span class="logo-mark">+</span><span>KA-BARKADA CULTURAL ALLIANCE</span></a><p>Kultura • Akademya • Bayanihan<br>Celebrating cultures. Creating opportunities. Serving communities.</p><a href="mailto:kabarkadautah@gmail.com" class="footer-email">kabarkadautah@gmail.com ↗</a></div><div class="footer-bottom"><span>© 2026 Ka-Barkada Cultural Alliance. All Rights Reserved.</span><div><a href="#about">About Us</a><a href="#work">Our Work</a><a href="#events">Events</a><a href="#support">Get Involved</a><a href="#contact">Contact</a></div><span>People. Culture. Community. Always.</span></div><div class="social-links"><a href="https://www.instagram.com/ka_barkada_utah?stkn=MWs0MDhhYWNiMm5iaQ%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.facebook.com/share/1bj1emCxqh/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://youtube.com/@kabarkadautah?si=WIXvmvsm1EysvQlR" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.tiktok.com/@kabarkadautah" target="_blank" rel="noopener noreferrer">TikTok</a><a href="https://linktr.ee/kabarkadautah?fbclid=IwY2xjawUNIfNwZG9mBWV4dG4DYWVtAjEwAGJyaWQRMXpPRk9OMjl0aU52T0tDeUtzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEeTzdW6rIBZeHY7EDB35HOt9szmS6l4NtdL182QeIP0zdC7fYjMLCIn_wmvww_aem_p3VvD2PnF7phJIqJajpaqg" target="_blank" rel="noopener noreferrer">Linktree</a><a href="tel:+18019602994">+1 801 - 960 - 2994</a></div><p class="footer-legal">Ka-Barkada Cultural Alliance is a 501(c)(3) nonprofit organization based in Utah.</p><p class="footer-credit">Made by Maddoxx Madrid</p></footer>
+    <dialog class="confirm-dialog" id="logout-confirm-dialog" aria-labelledby="logout-confirm-title">
+        <p class="eyebrow">Confirm logout</p>
+        <h2 id="logout-confirm-title">Are you sure you want to log out?</h2>
+        <div class="confirm-actions">
+            <button class="button button-secondary" id="cancel-logout" type="button">Cancel</button>
+            <button class="button button-primary" id="confirm-logout" type="button">Log out</button>
+        </div>
+    </dialog>
     <script src="script.js" defer></script>
 </body>
 </html>

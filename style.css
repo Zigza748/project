@@ -118,12 +118,21 @@ cite { font-family:'DM Sans',sans-serif; font-size:12px; font-style:normal; font
 .story-gallery img:nth-child(2),.story-gallery img:nth-child(3),.story-gallery img:nth-child(5) { grid-column:span 7; }
 .story-gallery img:nth-child(3) { grid-row:span 2; }
 .back-to-school-section { background:#f0efe9; color:var(--ink); padding:68px 10vw 110px; }
-.back-to-school-kicker { color:#d96d4b; font-size:12px; font-weight:700; letter-spacing:.18em; margin-bottom:20px; text-transform:uppercase; }
-.back-to-school-title { font-family:Manrope,sans-serif; font-size:clamp(52px,7vw,96px); letter-spacing:-.06em; line-height:1; margin:0 0 44px; }
-.back-to-school-grid { display:grid; gap:28px 44px; grid-template-columns:repeat(2,minmax(0,1fr)); }
-.back-to-school-item { align-items:flex-start; display:flex; gap:16px; }
-.back-to-school-icon { align-items:center; background:rgba(74,110,96,.12); border:1px solid rgba(24,50,45,.12); border-radius:8px; display:inline-flex; font-size:20px; height:34px; justify-content:center; min-width:34px; }
-.back-to-school-item p { color:var(--ink); font-size:clamp(20px,2.2vw,26px); line-height:1.35; margin:0; max-width:560px; }
+.back-to-school-kicker { color:#d96d4b; font-size:11px; font-weight:700; letter-spacing:.18em; margin-bottom:18px; text-transform:uppercase; }
+.back-to-school-title { font-family:Manrope,sans-serif; font-size:clamp(38px,5vw,72px); letter-spacing:-.06em; line-height:1; margin:0 0 36px; }
+.back-to-school-grid { display:grid; gap:22px; grid-template-columns:repeat(2,minmax(0,1fr)); }
+.back-to-school-item { margin:0; }
+.back-to-school-item img { border-radius:12px; box-shadow:0 8px 24px rgba(24,50,45,.08); display:block; height:320px; object-fit:cover; width:100%; }
+.back-to-school-item figcaption { color:var(--ink); font-size:16px; line-height:1.4; margin-top:10px; }
+
+@media (max-width: 900px) {
+    .back-to-school-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+
+@media (max-width: 560px) {
+    .back-to-school-grid { grid-template-columns:1fr; }
+    .back-to-school-item img { height:220px; }
+}
 .story-video-section { border-top:1px solid var(--line); padding:90px 10vw; }
 .story-video-frame { background:var(--ink); margin-top:35px; padding:18px; }
 .story-video { background:#000; display:block; max-height:680px; width:100%; }

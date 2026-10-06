@@ -119,7 +119,8 @@ cite { font-family:'DM Sans',sans-serif; font-size:12px; font-style:normal; font
 .story-gallery img:nth-child(3) { grid-row:span 2; }
 .back-to-school-section { background:#f0efe9; color:var(--ink); padding:68px 10vw 110px; }
 .back-to-school-kicker { color:#d96d4b; font-size:11px; font-weight:700; letter-spacing:.18em; margin-bottom:18px; text-transform:uppercase; }
-.back-to-school-title { font-family:Manrope,sans-serif; font-size:clamp(38px,5vw,72px); letter-spacing:-.06em; line-height:1; margin:0 0 36px; }
+.back-to-school-title { font-family:Manrope,sans-serif; font-size:clamp(38px,5vw,72px); letter-spacing:-.06em; line-height:1; margin:0 0 26px; }
+.back-to-school-description { color:var(--muted); font-size:18px; line-height:1.6; margin:0 0 32px; max-width:980px; }
 .back-to-school-grid { display:grid; gap:22px; grid-template-columns:repeat(2,minmax(0,1fr)); }
 .back-to-school-item { margin:0; }
 .back-to-school-item img { border-radius:12px; box-shadow:0 8px 24px rgba(24,50,45,.08); display:block; height:320px; object-fit:cover; width:100%; }
@@ -132,6 +133,7 @@ cite { font-family:'DM Sans',sans-serif; font-size:12px; font-style:normal; font
 @media (max-width: 560px) {
     .back-to-school-grid { grid-template-columns:1fr; }
     .back-to-school-item img { height:220px; }
+    .back-to-school-description { font-size:16px; }
 }
 .story-video-section { border-top:1px solid var(--line); padding:90px 10vw; }
 .story-video-frame { background:var(--ink); margin-top:35px; padding:18px; }

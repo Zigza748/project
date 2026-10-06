@@ -124,6 +124,8 @@ cite { font-family:'DM Sans',sans-serif; font-size:12px; font-style:normal; font
 .back-to-school-grid { display:grid; gap:22px; grid-template-columns:repeat(2,minmax(0,1fr)); }
 .back-to-school-item { margin:0; }
 .back-to-school-item img { border-radius:12px; box-shadow:0 8px 24px rgba(24,50,45,.08); display:block; height:320px; object-fit:cover; width:100%; }
+.back-to-school-item.featured { grid-column:1 / -1; }
+.back-to-school-item.featured img { height:520px; object-position:center; }
 .back-to-school-item figcaption { color:var(--ink); font-size:16px; line-height:1.4; margin-top:10px; }
 
 @media (max-width: 900px) {
@@ -133,6 +135,7 @@ cite { font-family:'DM Sans',sans-serif; font-size:12px; font-style:normal; font
 @media (max-width: 560px) {
     .back-to-school-grid { grid-template-columns:1fr; }
     .back-to-school-item img { height:220px; }
+    .back-to-school-item.featured img { height:280px; }
     .back-to-school-description { font-size:16px; }
 }
 .story-video-section { border-top:1px solid var(--line); padding:90px 10vw; }

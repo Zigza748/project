@@ -355,3 +355,43 @@ if (joinDialog && joinButton && dialogClose && joinForm && formSuccess) {
         formSuccess.hidden = false;
     });
 }
+
+const lightboxOverlay = document.querySelector('#lightbox-overlay');
+const lightboxImage = document.querySelector('#lightbox-image');
+const lightboxClose = document.querySelector('#lightbox-close');
+const lightboxTriggers = document.querySelectorAll('.lightbox-trigger, .story-image');
+
+function openLightbox(src, alt) {
+    if (!lightboxOverlay || !lightboxImage) return;
+    lightboxImage.src = src;
+    lightboxImage.alt = alt || 'Expanded image';
+    lightboxOverlay.classList.add('visible');
+    lightboxOverlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    if (!lightboxOverlay || !lightboxImage) return;
+    lightboxOverlay.classList.remove('visible');
+    lightboxOverlay.setAttribute('aria-hidden', 'true');
+    lightboxImage.src = '';
+    document.body.style.overflow = '';
+}
+
+if (lightboxTriggers.length && lightboxOverlay && lightboxImage && lightboxClose) {
+    lightboxTriggers.forEach((trigger) => {
+        trigger.addEventListener('click', () => {
+            openLightbox(trigger.src, trigger.alt || 'Expanded image');
+        });
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxOverlay.addEventListener('click', (event) => {
+        if (event.target === lightboxOverlay) closeLightbox();
+    });
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && lightboxOverlay.classList.contains('visible')) {
+            closeLightbox();
+        }
+    });
+}
